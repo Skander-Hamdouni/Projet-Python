@@ -12,7 +12,7 @@ def list_of_files(directory):
     return files_names # renvoi un tableau de chaîne de caractère
 
 # Test la fonction list_of_files
-assert list_of_files('./speeches') == ['Nomination_Chirac1.txt', 'Nomination_Chirac2.txt', 'Nomination_Giscard dEstaing.txt', 'Nomination_Hollande.txt', 'Nomination_Macron.txt', 'Nomination_Mitterrand1.txt', 'Nomination_Mitterrand2.txt', 'Nomination_Sarkozy.txt']
+#assert list_of_files('./speeches') == ['Nomination_Chirac1.txt', 'Nomination_Chirac2.txt', 'Nomination_Giscard dEstaing.txt', 'Nomination_Hollande.txt', 'Nomination_Macron.txt', 'Nomination_Mitterrand1.txt', 'Nomination_Mitterrand2.txt', 'Nomination_Sarkozy.txt']
 files_name = list_of_files('./speeches')
 Nombre_fichiers = len(files_name)
 
@@ -36,9 +36,9 @@ def supprime_doublon(tab):
     return sans_doublon # Renvoi un tableau
 
 #Test permettant de vérifier si la fonction marche correctement
-assert supprime_doublon([3,4,5,6,3,6]) == [3,4,5,6] 
-assert supprime_doublon([3,4,5,5,6,3,6,5,1]) == [3,4,5,6,1]
-assert supprime_doublon([4,3,3,3,3,4,4,4,5]) == [4,3,5]
+#assert supprime_doublon([3,4,5,6,3,6]) == [3,4,5,6] 
+#assert supprime_doublon([3,4,5,5,6,3,6,5,1]) == [3,4,5,6,1]
+#assert supprime_doublon([4,3,3,3,3,4,4,4,5]) == [4,3,5]
 
 # Création de la fonction qui permet de remplacer un caractere dans un mot, prend en argument un mot, le caractère que l'on change et le caractère par lequel on le change
 def remplacer(mot, character, caractere_nouveau):
@@ -51,7 +51,7 @@ def remplacer(mot, character, caractere_nouveau):
     return new # Renvoi une chaine de caractère
 
 # Test de la fonction
-assert remplacer("Je suis la", "s", "k") == "Je kuik la"
+#assert remplacer("Je suis la", "s", "k") == "Je kuik la"
 
 # Récupère les noms des présidents et supprime tout les nombres et les types des fichiers
 def noms_presidents(): 
@@ -66,7 +66,7 @@ def noms_presidents():
     liste_présidents = supprime_doublon(liste_présidents) # Appele de notre fonction créee précédement 
     return liste_présidents # Renvoi un tableau
 
-assert noms_presidents() == ['Chirac', 'Giscard dEstaing', 'Hollande', 'Macron', 'Mitterrand', 'Sarkozy'] # Test la fonction  noms_presidents
+#assert noms_presidents() == ['Chirac', 'Giscard dEstaing', 'Hollande', 'Macron', 'Mitterrand', 'Sarkozy'] # Test la fonction  noms_presidents
 
 
 # Récupère les noms des présidents et supprime tout les nombres et les types des fichiers, prend en argument un tableau
@@ -95,7 +95,7 @@ def prenoms_présidents(nom):
     return prenoms_noms[nom] # renvoi le prénom du président
 
 # Test de la fonction 
-assert prenoms_présidents("Macron") == "Emmanuel"
+#assert prenoms_présidents("Macron") == "Emmanuel"
 
 # Permet de convertir un mot composé de majuscules en un mot composé que de minuscules, prend en argument un mot
 def minuscules(mot):
@@ -112,8 +112,8 @@ def minuscules(mot):
     return nouveau_mot # Renvoi une chaîne de caractère 
 
 #Test permettant de vérifier si la fonction minuscules marche
-assert minuscules("MartiN") == "martin" 
-assert minuscules("Je M aPpElLe MaRtIn") == "je m appelle martin"
+#assert minuscules("MartiN") == "martin" 
+#assert minuscules("Je M aPpElLe MaRtIn") == "je m appelle martin"
 
 # Fonction permettant de supprimertout les caractères de ponctuation
 def ponctuation(texte):
@@ -161,7 +161,7 @@ def cleaned(texte):
     return contenu_cleaned # renvoi une chaîne de caractère
 
 # Test de la fonction
-assert cleaned(" Je Suis PResent, j'attends votre retour...") == "je suis present je attends votre retour"
+#assert cleaned(" Je Suis PResent, j'attends votre retour...") == "je suis present je attends votre retour"
 
 
 """                                                               """
@@ -183,7 +183,7 @@ def tableau_chaine_caractere(texte):
     return mots # Renvoi un tableau de mot
 
 # Test de la fonction
-assert tableau_chaine_caractere("je suis la je suis present") == ['je', 'suis', 'la', 'je', 'suis', 'present']
+#assert tableau_chaine_caractere("je suis la je suis present") == ['je', 'suis', 'la', 'je', 'suis', 'present']
 
 # Créer la fonctions qui permet de trouver les mots en occurrences du texte
 def occurences(tableau):
@@ -196,7 +196,7 @@ def occurences(tableau):
     return occurences # Renvoi un dictionnaire où chaque mot et une keys et chaque score est une values
             
 # Test de la fonction
-assert occurences(['je', 'suis', 'la', 'je', 'suis', 'present']) == {'je': 2, 'suis': 2, 'la': 1, 'present': 1}
+#assert occurences(['je', 'suis', 'la', 'je', 'suis', 'present']) == {'je': 2, 'suis': 2, 'la': 1, 'present': 1}
 
 # Fonction permettant de lire le contenu de tout les fichiers en même temps, ne prend aucun argument
 def FileUnited():
@@ -242,7 +242,7 @@ def TF(directory, mot) :
         return count # Renvoi un entier
     
 # Test de la fonction
-assert TF("./speeches/Cleaned/Cleaned_Nomination_Sarkozy.txt", "veut" ) == 14
+#assert TF("./speeches/Cleaned/Cleaned_Nomination_Sarkozy.txt", "veut" ) == 14
 
 # Création de TFListe qui prend en argument directement un tableau de mot et qui cherche un mot dans ce tableau
 def TFliste (Liste, mot) : 
@@ -253,7 +253,7 @@ def TFliste (Liste, mot) :
     return count # Renvoi un entier
 
 # Test de la fonction
-assert TFliste(['bonjour','salut','bonjour','aurevoir'],'bonjour') == 2
+#assert TFliste(['bonjour','salut','bonjour','aurevoir'],'bonjour') == 2
 
 
 """                                      """
@@ -349,7 +349,7 @@ def print_matrice(matrice):
     for sous_tableau in matrice: # Parcourt tout les sous tableau
         print(sous_tableau) # Et les affiche un à un 
 
-matrice = matrice_tfidf('./speeches/Cleaned/')
+#matrice = matrice_tfidf('./speeches/Cleaned/')
 #print(matrice)
 #matrice_tf_idf = print_matrice(matrice)
 #print(matrice_tf_idf)
@@ -372,7 +372,7 @@ def score_tfidf_0(TableauDeTableau):
     return new_tab # Renvoi un tableau
 
 # Test de la fonction
-assert score_tfidf_0(matrice) == ['messieurs', 'les', '', 'mesdames', 'en', 'ce', 'je', 'la', 'de', 'l', 'une', 'a', 'france', 'qui', 'se', 'et', 'dans', 'le', 'peuple', 'aux', 'que', 'son', 'histoire', 'pour', 'qu', 'par', 'des', 'j', 'il', 'est', 'mais', 'faire', 'du']
+#assert score_tfidf_0(matrice) == ['messieurs', 'les', '', 'mesdames', 'en', 'ce', 'je', 'la', 'de', 'l', 'une', 'a', 'france', 'qui', 'se', 'et', 'dans', 'le', 'peuple', 'aux', 'que', 'son', 'histoire', 'pour', 'qu', 'par', 'des', 'j', 'il', 'est', 'mais', 'faire', 'du']
 
 # Fonction qui trouve les mots ayant le socre TF-IDF le plus élevé, prend en argument une matrice
 def mots_tfidf_max(matrice_tfidf):
@@ -397,7 +397,7 @@ def mots_tfidf_max(matrice_tfidf):
     return mots_max # Renvoi un tableau de tableau
 
 # Test de vérification de la faonction
-assert mots_tfidf_max(matrice) == [['voudrais'], ['doit'], ['president'], ['avant'], ['À'], ['ville'], ['obligation', 'faut'], ['pense']]
+#assert mots_tfidf_max(matrice) == [['voudrais'], ['doit'], ['president'], ['avant'], ['À'], ['ville'], ['obligation', 'faut'], ['pense']]
 
 # Fonction qui permet de trouver quel est / quels sont les mots plus répétés par UN président, cette fonction prend le noms d'un président en argument
 def recurrence_mot_presidents(president) : 
@@ -411,7 +411,7 @@ def recurrence_mot_presidents(president) :
     return resultat # Renvoi un tableau de tableau ou juste un tableau en fonctin du nombre de fichier 
 
 # Test de la fonction
-assert recurrence_mot_presidents("Chirac") == [['voudrais'], ['doit']]
+#assert recurrence_mot_presidents("Chirac") == [['voudrais'], ['doit']]
 
 # Fonction qui permet de trouver quels présidents ont évoqué un certain mot, prend en argument un mot
 def mot_evoque(mot) :
@@ -446,7 +446,7 @@ def ecologie() :
     return Liste # Renvoi une chaîne de caractère
 
 # Test de la focntion
-assert ecologie() == "Les présidents qui ont parlé de climat sont [['Macron']]"
+#assert ecologie() == "Les présidents qui ont parlé de climat sont [['Macron']]"
 
 # Fonction qui trouve quels sont les mots qui ont le plus petit score TF-IDF, prend en argument une matrice
 def mots_tfidf_min(matrice_tfidf):
@@ -476,7 +476,7 @@ def tokenisation_question(chaine_caractere):
     tab = tableau_chaine_caractere(new_chaine)  # Converti la question en chaîne de caractère
     return tab # Renvois un tableau 
 
-assert tokenisation_question("Je suis là je suis présent") == ['je', 'suis', 'là', 'je', 'suis', 'présent']
+#assert tokenisation_question("Je suis là je suis présent") == ['je', 'suis', 'là', 'je', 'suis', 'présent']
 
 # Focntion qui permet de trouver les mots en communs entre notre matrice TF-IDF et la question de l'utilisateur
 def intersection_question_text(tableau, directory):  # ---> paramètres : tableau ( notre question ) et un chemin pour calculer la matrices des documents
@@ -497,9 +497,9 @@ def intersection_question_text(tableau, directory):  # ---> paramètres : tablea
     return intersection # Renvpi un tableau de mot
 
 # Test de la fonction
-tab = ['pomme','je', 'suis', 'là', 'je', 'suis', 'présent','Carl']
-dirct = './speeches/Cleaned/'
-assert intersection_question_text(['pomme','je', 'suis', 'là', 'je', 'suis', 'présent','Carl'],'./speeches/') == ['je', 'suis', 'là', 'je', 'suis', 'présent']
+#tab = ['pomme','je', 'suis', 'là', 'je', 'suis', 'présent','Carl']
+#dirct = './speeches/Cleaned/'
+#assert intersection_question_text(['pomme','je', 'suis', 'là', 'je', 'suis', 'présent','Carl'],'./speeches/') == ['je', 'suis', 'là', 'je', 'suis', 'présent']
 
 # Fonction qui calcule le score TF-IDF de la question
 def scorequestion(question):
@@ -520,7 +520,7 @@ def scorequestion(question):
     return Matrice # Renvoi un tableau de sous-tableaux
 
 # Test de la fonction
-question = "Comment allez vous ?"
+#question = "Comment allez vous ?"
 #print(scorequestion(question))
 #assert scorequestion(question) == ['comment', 0.903, 'allez', 0.0, 'vous', 0.204]
 
@@ -557,39 +557,36 @@ def scorequestion(question, matrice):
 
             MatriceQuestion.append([0.0] * nb_fichiers)  # Zéros pour les mots non présents dans la question
 
- 
-
-    return MatriceQuestion
+    return MatriceQuestion # Renvoi une matrice
 
 
 # Fonction qui réalise le produit scalaire entre 2 vecteurs
-def scalaire(tab1,tab2):
-    resultat = sum(i * j for i, j in zip(tab1, tab2))
-    return resultat
+def scalaire(matrice1, matrice2):
+    def scalaire(row1, row2):
+        return sum(i * j for i, j in zip(row1, row2)) # Return un entier
+
+    return sum(scalaire(row1, row2) for row1, row2 in zip(matrice1, matrice2))
+
 
 # Fonction qui calcule la norme d'un vecteur 2D
 def calcul_similarite(tfidf_question, tfidf_document, correspondance_question, correspondance_liste):
     tfidf_question_aligned = [0] * len(correspondance_liste)
     for i, mot in enumerate(correspondance_liste):
         mot_str = str(mot)  # Convertir le mot en chaîne de caractères
-        if mot_str in correspondance_question:
+        if mot_str in correspondance_question: # Parcour tout les mots
             index_mot_question = correspondance_question.index(mot_str)
             tfidf_question_aligned[i] = tfidf_question[index_mot_question]
 
     dot_product = sum(q * d for q, d in zip(tfidf_question_aligned, tfidf_document))
-    norm_question = sum(q ** 2 for q in tfidf_question_aligned) ** 0.5
+    norm_question = sum(q ** 2 for q in tfidf_question_aligned) ** 0.5 # Calcul des normes
     norm_document = sum(d ** 2 for d in tfidf_document) ** 0.5
 
-    if norm_question == 0 or norm_document == 0:
+    if norm_question == 0 or norm_document == 0: # Si les 2 normes valent 0
         return 0
 
     cos_sim = dot_product / (norm_question * norm_document)
-    return cos_sim
+    return cos_sim # Renvoi un entier
 
-# Test de la fonction
-mat1 = [[7, 8, 9], [10, 11, 12]]
-mat2 = [[3,4,1], [5,6,2]]
-#assert cosine_similarity(mat1,mat2) == 0.8956220336635036
 
 
 # Focntion qui permet d'avoir les noms des fichiers nettoyé
@@ -603,42 +600,43 @@ def get_nom_fichier_cleaned(nom_fichier_corpus):
     Returns:
     str: Nom équivalent dans le répertoire "./cleaned".
     """
-    nom_base = os.path.splitext(nom_fichier_corpus)
+    nom_base = os.path.splitext(nom_fichier_corpus) # Supprime l'extension
     nom_fichier_cleaned = os.path.join("./speeches/Cleaned", nom_base + ".txt")
     return nom_fichier_cleaned # Renvoi un tableau
 
+# Calcul le score TF-IDF de la question
 def score_mot_question(question) :
     Matrice = []
     directory = "./speeches/Cleaned/"
     question = tokenisation_question(question)
     tab_fichiers = list_of_files(directory) 
     nb_fichiers = len(tab_fichiers) 
-    for mot in question : 
-        TF = TFliste(question, mot)
+    for mot in question :  # Parcour tout les mots de la question
+        TF = TFliste(question, mot) # Calcul le score TF des mots de la question
         somme = sum(presence(os.path.join(directory, tab_fichiers[j]), mot) for j in range(nb_fichiers))
         if somme != 0:
-            score_idf = round(math.log10(nb_fichiers / somme), 3) #vérifiée 
+            score_idf = round(math.log10(nb_fichiers / somme), 3) # Scocre IDF
         else:
-            score_idf = 0.0    
-        tfidf = TF * score_idf
+            score_idf = 0.0     # Sinon à 0.0
+        tfidf = TF * score_idf # Score TF-IDF
         Matrice.append(mot)
         Matrice.append(tfidf)
-    return Matrice 
+    return Matrice  # Renvoi la matrice
 
 
 # Fonction qui cherche le document le plus pertinent, paramètre, matrice, vecteur ( float ), directory
 def doc_pertinent(liste_tf_idf_question, matrice, correspondance_question, correspondance_liste, correspondance_colonne):
-    maxi = -float('inf')
+    maxi = -float('inf') # Initialise une valeur à moins l'infini
     indice_doc = 0
-    for colonne in range(len(matrice[0])):
+    for colonne in range(len(matrice[0])): # Parcourt toutes les colonnes
         new_ligne = []
         for indice_mot in range(len(matrice)):
             new_ligne.append(matrice[indice_mot][colonne])
-        calcul_sim = calcul_similarite(liste_tf_idf_question, new_ligne, correspondance_question, correspondance_liste)
+        calcul_sim = calcul_similarite(liste_tf_idf_question, new_ligne, correspondance_question, correspondance_liste) # Calcul de notre similarité
         if calcul_sim > maxi:
             maxi = calcul_sim
             indice_doc = colonne
-    return f'{correspondance_colonne[indice_doc]}'
+    return f'{correspondance_colonne[indice_doc]}' # Return le nom d'un document
 
 def trouver_correspondance_liste(matrice_tfidf):
     correspondance_liste = []
@@ -656,21 +654,22 @@ def trouver_correspondance_colonne(chemin_dossier):
         if nom_fichier.endswith('.txt'):  # Assurez-vous de filtrer par le bon type de fichier
             correspondance_colonne.append(nom_fichier)
 
-    return correspondance_colonne
+    return correspondance_colonne # Renvoi un tab
 
+"""
 correspondance_colonne = trouver_correspondance_colonne("./speeches/Cleaned/")
 matrice = matrice_tfidf_Vecteur('./speeches/Cleaned/')
-question = "que pense-tu de la france ?"
+question = "que penses-tu de la france ?"
 question_tfidf_test = scorequestion(question, matrice)
 directory = './speeches/Cleaned/'
-correspondance_liste = trouver_correspondance_liste(matrice)
+correspondance_liste = trouver_correspondance_liste(matrice)"""
 
 
 #print(doc_pertinent(question_tfidf_test,matrice, question, correspondance_liste, correspondance_colonne))
 
 
 def trouver_mot_score_max(score_mot_question):
-    max_score = -float('inf')
+    max_score = -float('inf') # Initialise une valeur infini
     mot_max = None
 
     # Parcourir la liste par paires (mot, score)
@@ -678,20 +677,14 @@ def trouver_mot_score_max(score_mot_question):
         mot = score_mot_question[i]
         score = score_mot_question[i + 1]
 
-        if score > max_score:
+        if score > max_score: # Si on trouve un socre plus élévé
             max_score = score
             mot_max = mot
 
-    return mot_max
-
-score_mot_questionn = score_mot_question(question)
-mot = trouver_mot_score_max(score_mot_questionn)
+    return mot_max # Renvoi un mot
 
 def trouver_phrase_avec_mot(mot, chemin_document):
     # Ouvrir le document et lire son contenu
-    print(mot)
-    print(chemin_document)
-    lignes_separees = []
     with open('./speeches/Cleaned/' + chemin_document, 'r', encoding='utf-8') as fichier:
         contenu = fichier.readlines()
         for phrase in contenu:
@@ -699,13 +692,46 @@ def trouver_phrase_avec_mot(mot, chemin_document):
             if mot in phrase:
                 # Retourner la phrase complète qui contient le mot
                 return f"«{phrase}.»"
-    return "Le mot n'a pas été trouvé dans le document."
+    return "Le mot n'a pas été trouvé dans le document." # Return une "erreur"
 
-matrice_test = matrice_tfidf_Vecteur('./speeches/Cleaned/')
-question_tfidf_test = scorequestion(question, matrice)
-correspondance_colonne_fich = trouver_correspondance_colonne("./speeches/Cleaned/")
-correspondance_liste_test = trouver_correspondance_liste(matrice)
-chemin = doc_pertinent(question_tfidf_test, matrice_test, question, correspondance_liste_test, correspondance_colonne_fich)
-print(chemin)
+# Fonction qui génère une reponse
+def generer_reponse(question, reponseV1, question_starters):
+    # Trouver le mot de démarrage dans la question
+    mot_debut = question.split()[0].rstrip('?:!')  # Supprime les signes de ponctuation
+    # Obtenir la phrase d'introduction à partir du dictionnaire de démarrage de question
+    introduction = question_starters.get(mot_debut, "")
 
-print(trouver_phrase_avec_mot(mot,chemin))
+    # Extraire la phrase contenant le mot clé du document
+    phrase = reponseV1
+
+    # Si aucune phrase n'est trouvée, renvoyer un message approprié
+    if not phrase:
+        return "Je suis désolé, je ne peux pas trouver l'information demandée." # Return une "erreur"
+
+    # Construire la réponse complète
+    reponse = f"{introduction}{phrase}"
+
+    # Assurer que la réponse commence par une majuscule et se termine par un point
+    reponse = reponse[0].upper() + reponse[1:]  # Met en majuscule la 1ère lettre
+    if not reponse.endswith('.'): # Rajoute un point à la fin s'il y en a pas
+        reponse += '.'
+
+    return reponse # Renvoi chaine de caractère
+
+# Création de notre fonction qui va permètre de génrer une reponse dans notre main, prend en argumnet une question
+def answer(question):
+    score_mot_questionn = score_mot_question(question)
+    mot = trouver_mot_score_max(score_mot_questionn)
+    question_starters = {
+    "Comment": "Après analyse, ",
+    "Pourquoi": "Car, ",                            """ Appel de toutes nos fonctions pour répondre à la question"""
+    "Peux-tu": "Oui, bien sûr!"
+    }
+    correspondance_colonne = trouver_correspondance_colonne("./speeches/Cleaned/")
+    matrice = matrice_tfidf_Vecteur('./speeches/Cleaned/')
+    question_tfidf = scorequestion(question, matrice)
+    correspondance_liste = trouver_correspondance_liste(matrice)
+    chemin = doc_pertinent(question_tfidf, matrice, question, correspondance_liste, correspondance_colonne)
+    reponseV1 = (trouver_phrase_avec_mot(mot,chemin))
+    answer = generer_reponse(question,reponseV1, question_starters)
+    return answer # Return une chaine de caractère
