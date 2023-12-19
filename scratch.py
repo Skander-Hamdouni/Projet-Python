@@ -154,14 +154,26 @@ def ponctuation(texte):
     
     return texte_propre
 
+def cleaned_fichier():
+    # Lister tous les fichiers dans le répertoire 'speeches'
+    liste = supprime_doublon(list_of_files("./speeches"))
+    for nom_fichiers in liste: # Permet de lire tout les noms des fichiers
+        with open("./speeches/" + nom_fichiers, "r", encoding='utf-8') as f:
+            contenu = f.read() # li le fichier
+        contenu_minuscule = minuscules(contenu) # La fonction minuscules permet de convertir les caractères en caractères minuscules
+        contenu_cleaned = ponctuation(contenu_minuscule)
+        # Créer un nouveau fichier dans le répertoire 'cleaned'
+        with open("./speeches/Cleaned/" + 'Cleaned_' + nom_fichiers, "w", encoding='utf-8') as nouveau_fichier: # Création des nouveaux fichiers
+            nouveau_fichier.write(contenu_cleaned)
+    return nouveau_fichier
+
+cleaned_fichier()
+
 # Création de la fonction Cleaned qui prend en argument un texte et qui le nettoi de sa ponctuation et de ces majuscules
 def cleaned(texte):
     contenu_minuscule = minuscules(texte) # La fonction minuscules permet de convertir les caractères en caractères minuscules
     contenu_cleaned = ponctuation(contenu_minuscule) # Appel de la fonction qui supprime la ponctuation
     return contenu_cleaned # renvoi une chaîne de caractère
-
-# Test de la fonction
-#assert cleaned(" Je Suis PResent, j'attends votre retour...") == "je suis present je attends votre retour"
 
 
 """                                                               """
@@ -720,6 +732,7 @@ def generer_reponse(question, reponseV1, question_starters):
 
 # Création de notre fonction qui va permètre de génrer une reponse dans notre main, prend en argumnet une question
 def answer(question):
+    cleaned_fichier()
     score_mot_questionn = score_mot_question(question)
     mot = trouver_mot_score_max(score_mot_questionn)
     question_starters = {
